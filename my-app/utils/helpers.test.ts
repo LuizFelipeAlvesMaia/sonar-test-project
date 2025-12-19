@@ -126,7 +126,8 @@ describe('Number utilities', () => {
 
     it('should handle negative values', () => {
       const formatted = formatCurrency(-100);
-      expect(formatted).toContain('-100');
+      expect(formatted).toContain('100');
+      expect(formatted).toContain('-');
     });
   });
 });

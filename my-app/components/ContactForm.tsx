@@ -75,7 +75,7 @@ export default function ContactForm() {
         <label htmlFor="email" className="font-medium">Email:</label>
         <input
           id="email"
-          type="email"
+          type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="px-3 py-2 border rounded"
