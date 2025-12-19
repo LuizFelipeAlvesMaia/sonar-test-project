@@ -1,4 +1,7 @@
 import Image from "next/image";
+'use client';
+
+import Counter from "@/components/Counter";
 
 export default function Home() {
   return (
@@ -32,6 +35,8 @@ export default function Home() {
               Learning
             </a>{" "}
             center.
+          <p className="text-xl text-gray-600 dark:text-gray-300">
+            Code Coverage Demo with Jest and React Testing Library
           </p>
         </div>
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
@@ -60,6 +65,30 @@ export default function Home() {
           </a>
         </div>
       </main>
+
+        <footer className="mt-12 text-center">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+            <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+              🧪 About This Project
+            </h3>
+            <div className="text-left space-y-2 text-gray-700 dark:text-gray-300">
+              <p>✅ <strong>Jest</strong> configured for unit testing</p>
+              <p>✅ <strong>React Testing Library</strong> for component testing</p>
+              <p>✅ <strong>Code Coverage</strong> integrated with SonarQube</p>
+              <p>✅ Multiple testable components</p>
+              <p>✅ Utility functions with tests</p>
+            </div>
+            <div className="mt-6 flex justify-center gap-4">
+              <code className="bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded text-sm">
+                yarn test
+              </code>
+              <code className="bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded text-sm">
+                yarn test:coverage
+              </code>
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }

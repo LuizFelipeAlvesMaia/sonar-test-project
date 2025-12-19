@@ -34,13 +34,23 @@ on:
   workflow_dispatch:
 
 permissions:
-  pull-requests: read # allows SonarQube to decorate PRs with analysis results
+  pull-requests: write # Allows SonarQube to decorate PRs with analysis results
+  contents: read # Allows reading the repository content
 
 jobs:
   Analysis:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0 # Shallow clones should be disabled for better analysis relevance
+      - name: Install dependencies
+        working-directory: ./my-app
+        run: yarn install
+      - name: Test and coverage
+        working-directory: ./my-app
+        run: yarn test:coverage
       - name: Analyze with SonarQube
 
         # You can pin the exact commit or the version.
