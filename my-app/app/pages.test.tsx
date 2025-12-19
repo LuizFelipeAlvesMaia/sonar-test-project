@@ -105,7 +105,8 @@ describe('Home Page', () => {
     fireEvent.click(cartButton);
     
     // Check total
-    expect(screen.getByText('R$ 4999.99')).toBeInTheDocument();
+    const cartDropdown = screen.getByText('Shopping Cart').closest('div');
+    expect(within(cartDropdown!).getByText('R$ 4999.99')).toBeInTheDocument();
   });
 
   it('increases quantity when same product is added multiple times', () => {
