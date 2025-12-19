@@ -41,8 +41,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Install dependencies
+        working-directory: ./my-app
+        run: yarn install
+      - name: Test and coverage
+        working-directory: ./my-app
+        run: yarn test:coverage
       - name: Analyze with SonarQube
-
         # You can pin the exact commit or the version.
         # uses: SonarSource/sonarqube-scan-action@v1.1.0
         uses: SonarSource/sonarqube-scan-action@v7.0.0
