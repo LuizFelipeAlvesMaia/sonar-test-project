@@ -55,7 +55,7 @@ jobs:
           args:
             # Unique key of your project. You can find it in SonarQube > [my project] > Project Information (top-right menu)
             # mandatory
-            -Dsonar.projectKey=LuizFelipeAlvesMaia_sonar-test-project_e92f18ca-8c38-465f-9078-4d1a6a968621
+            -Dsonar.projectKey=sonar-test-project
             # Comma-separated paths to directories containing main source files.
             #-Dsonar.sources= # optional, default is project base directory
             # When you need the analysis to take place in a directory other than the one from which it was launched
